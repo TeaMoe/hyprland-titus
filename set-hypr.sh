@@ -22,7 +22,6 @@
 # fi
 #
 # we need to find a source for those
-# grimblast-git    # https://github.com/hyprwm/contrib
 # sddm-git         # we wil use gdm instead which should work fine
 # swaylock-effects # TODO: build from source https://github.com/mortie/swaylock-effects
 # noise-suppression-for-voice
@@ -39,6 +38,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 		dunst \
 		ffmpeg \
 		ffmpegthumbnailer \
+		grim \
 		hyprland \
 		kitty \
 		ladspa-rnnoise \
@@ -50,6 +50,7 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 		playerctl \
 		polkit-gnome \
 		rofi \
+		scdoc \
 		starship \
 		swaybg \
 		swaylock \
@@ -89,6 +90,11 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 		-d ~/.local/share/fonts/ && rm master.zip
 
 	curl -L --output ~/.local/share/fonts/feather.ttf https://github.com/AT-UI/feather-font/raw/master/src/fonts/feather.ttf
+
+	# build (it really is just install) grimblast
+	git clone https://github.com/hyprwm/contrib ~/.local/src/hyprwm-contrib
+	cd ~/.local/src/hyprwm-contrib/grimblast || exit
+	sudo make install
 fi
 
 ### Copy Config Files ###
