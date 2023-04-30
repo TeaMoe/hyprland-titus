@@ -61,14 +61,16 @@ if [[ $INST == "Y" || $INST == "y" ]]; then
 		tumbler \
 		viewnior \
 		wf-recorder \
-		wl-clipboard
+		wl-clipboard \
+		wlsunset
 
 	opi adobe-source-code-pro-fonts
 	opi inter-fonts
 	opi nwg-look
 	opi fira-mono-otf-fonts
-	opi waybar-hyprland
+	opi waybar-hyprland # TODO: publish branch
 	opi wlogout
+	opi xdg-desktop-portal-hyprland
 
 	mkdir -p ~/.themes
 	curl -L https://github.com/EliverLara/Nordic/releases/download/v2.2.0/Nordic.tar.xz | tar -C ~/.themes/ -xJ
